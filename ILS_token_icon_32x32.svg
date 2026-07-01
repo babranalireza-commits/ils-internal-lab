@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" role="img" aria-label="ILS Internal Lab logo">
+  <defs>
+    <linearGradient id="navyBlue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0A1A33"/>
+      <stop offset="100%" stop-color="#1565FF"/>
+    </linearGradient>
+    <linearGradient id="greenBlue" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2ECC71"/>
+      <stop offset="100%" stop-color="#1565FF"/>
+    </linearGradient>
+    <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E6EBF0"/>
+      <stop offset="55%" stop-color="#BFC5CD"/>
+      <stop offset="100%" stop-color="#3E4A59"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="7" fill="#F8FAFC"/>
+  <path d="M16 2.8 27.4 9.4v13.2L16 29.2 4.6 22.6V9.4L16 2.8Z" fill="none" stroke="url(#greenBlue)" stroke-width="2.1" stroke-linejoin="round"/>
+  <circle cx="16" cy="2.8" r="2.1" fill="#1565FF" stroke="#BFC5CD" stroke-width="0.7"/>
+  <circle cx="27.4" cy="16" r="2.1" fill="#2ECC71" stroke="#BFC5CD" stroke-width="0.7"/>
+  <circle cx="16" cy="29.2" r="2.1" fill="url(#silver)" stroke="#BFC5CD" stroke-width="0.7"/>
+  <circle cx="4.6" cy="16" r="2.1" fill="#0A1A33" stroke="#BFC5CD" stroke-width="0.7"/>
+  <rect x="9.1" y="10" width="2.4" height="12" rx="0.6" fill="url(#navyBlue)"/>
+  <path d="M14 10h2.7v9.3h5.7v2.7H14V10Z" fill="url(#greenBlue)"/>
+  <path d="M22.9 10.4c-1.1-.4-2.5-.6-4.1-.6-2.3 0-3.8.9-3.8 2.7 0 1.5 1.1 2.1 3.4 2.7 1.5.4 2.1.7 2.1 1.3 0 .7-.7 1-2.2 1-1.2 0-2.5-.3-3.6-.8v2.8c1.1.5 2.4.7 3.8.7 2.9 0 4.6-1.2 4.6-3.5 0-1.6-1-2.5-3.3-3.1-1.7-.5-2.2-.7-2.2-1.2s.6-.8 1.8-.8c1.2 0 2.4.2 3.5.7v-2.9Z" fill="url(#navyBlue)" opacity="0.18"/>
+  <path d="M22.7 10.9c-.9-.3-2.1-.5-3.3-.5-2 0-3.3.8-3.3 2.2 0 1.1.8 1.6 2.8 2.1 1.8.5 2.6 1 2.6 2 0 1.3-1.2 2.1-3.3 2.1-1.1 0-2.1-.2-3.1-.6" fill="none" stroke="url(#navyBlue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M21.7 19.8 24 22" stroke="url(#silver)" stroke-width="1.6" stroke-linecap="round"/>
+</svg>
