@@ -91,6 +91,23 @@
       padding: 2px 6px;
       border-radius: 7px;
     }
+    .add-token-btn {
+  margin-top: 18px;
+  width: 100%;
+  border: 0;
+  border-radius: 12px;
+  padding: 13px 16px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(135deg, #1565ff, #2ecc71);
+  box-shadow: 0 10px 24px rgba(37, 99, 255, .22);
+}
+
+.add-token-btn:hover {
+  transform: translateY(-1px);
+}
     @media (max-width: 620px) {
       .brand { flex-direction: column; align-items: flex-start; }
       .row { grid-template-columns: 1fr; }
@@ -141,6 +158,70 @@
   </div>
 </div>
     </section>
+    <button class="add-token-btn" onclick="addILSToMetaMask()">
+  Add ILS to MetaMask
+</button>
   </main>
+  <script>
+async function addILSToMetaMask() {
+  if (!window.ethereum) {
+    alert("MetaMask was not detected. Please install MetaMask and try again.");
+    return;
+  }
+
+  try {
+    await window.ethereum.request({
+      method: "wallet_switchEthereumChain",
+      params: [{ chainId: "0x2105" }]
+    });
+  } catch (switchError) {
+    if (switchError.code === 4902) {
+      try {
+        await window.ethereum.request({
+          method: "wallet_addEthereumChain",
+          params: [{
+            chainId: "0x2105",
+            chainName: "Base Mainnet",
+            nativeCurrency: {
+              name: "Ether",
+              symbol: "ETH",
+              decimals: 18
+            },
+            rpcUrls: ["https://mainnet.base.org"],
+            blockExplorerUrls: ["https://basescan.org"]
+          }]
+        });
+      } catch (addError) {
+        alert("Base Mainnet could not be added to MetaMask.");
+        return;
+      }
+    } else {
+      alert("Please switch to Base Mainnet in MetaMask.");
+      return;
+    }
+  }
+
+  try {
+    const wasAdded = await window.ethereum.request({
+      method: "wallet_watchAsset",
+      params: {
+        type: "ERC20",
+        options: {
+          address: "0x0E698b81D9Ab8f2144eB0273C47834514B59B070",
+          symbol: "ILS",
+          decimals: 18,
+          image: "https://babranalireza-commits.github.io/ils-internal-lab/ILS_token_icon_32x32.svg"
+        }
+      }
+    });
+
+    if (wasAdded) {
+      alert("ILS was added to MetaMask.");
+    }
+  } catch (error) {
+    alert("ILS was not added to MetaMask.");
+  }
+}
+</script>
 </body>
 </html>
